@@ -223,6 +223,10 @@ int ToolChain::Initialise(){
 	
       }
       
+      catch(std::exception& e){
+	logmessage<<e.what()<<std::endl;
+	throw;
+      }
       catch(...){
 	//*(m_data.Log)<<"WARNING !!!!! "<<m_toolnames.at(i)<<" Failed to initialise (uncaught error)"<<std::endl<<std::endl;
 	logmessage<<"WARNING !!!!! "<<m_toolnames.at(i)<<" Failed to initialise (uncaught error)"<<std::endl;
@@ -320,6 +324,10 @@ int ToolChain::Execute(int repeates){
 	  }  
 	}
 	
+	catch(std::exception& e){
+	  logmessage<<e.what()<<std::endl;
+	  throw;
+	}
 	catch(...){
 	  // *(m_data.Log)<<"WARNING !!!!!! "<<m_toolnames.at(i)<<" Failed to execute (uncaught error)"<<std::endl<<std::endl;
 	  logmessage<<"WARNING !!!!!! "<<m_toolnames.at(i)<<" Failed t\
@@ -416,6 +424,10 @@ int ToolChain::Finalise(){
 	}  
       }
       
+      catch(std::exception& e){
+	logmessage<<e.what()<<std::endl;
+	throw;
+      }
       catch(...){
 	//*(m_data.Log)<<"WARNING !!!!!!! "<<m_toolnames.at(i)<<" Finalised successfully (uncaught error)"<<std::endl<<std::endl;
 	logmessage<<"WARNING !!!!!!! "<<m_toolnames.at(i)<<" Finalised successfully (uncaught error)"<<std::endl;
