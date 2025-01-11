@@ -528,7 +528,6 @@ void* ServiceDiscovery::MulticastListenThread(void* arg){
 	delete it->second;
 	it->second=0;
 	RemoteServices.erase(it->first);
-        break;
 	
       }
       //std::cout<< "uuid = "<<it->first<<std::endl;
