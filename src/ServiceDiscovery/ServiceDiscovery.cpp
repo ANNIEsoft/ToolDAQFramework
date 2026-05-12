@@ -473,7 +473,7 @@ void* ServiceDiscovery::MulticastListenThread(void* arg){
 	
 	Store* newservice= new Store();
 	newservice->Set("ip",inet_ntoa(addr.sin_addr));
-	newservice->JsonParser(message);
+	newservice->JsonParser(std::string(&message[0],cnt));
 	
 	std::string uuid;
 	newservice->Get("uuid",uuid);
